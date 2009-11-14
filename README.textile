@@ -1,0 +1,17 @@
+h1. About
+
+Experiment with caching loadable files in a hash, so @Kernel#require@ works much faster. It should also works with RubyGems. Inspirated by http://gist.github.com/234467
+
+h1. Usage
+
+<pre>
+require "cached_require" # original Kernel#require
+require "yaml"  # redefined Kernel#require, will take much longer because of getting data
+require "rango" # redefined Kernel#require, should be very fast
+
+$LOAD_PATH.unshift(File.dirname(__FILE__)) # will update the hash
+</pre>
+
+h1. Problems of Current Implementation
+
+- Thread-safety
