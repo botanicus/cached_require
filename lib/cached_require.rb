@@ -21,16 +21,16 @@ class Loader
       Kernel.__require__(path)
     end
   end
-  
+
   def load(fragment)
     Kernel.load fragment
   end
-  
+
   def reload
     @filemap = nil
     self.filemap
   end
-  
+
   protected
   # hash["foo"] || hash["foo.rb"] is the same
   def hash
@@ -40,7 +40,7 @@ class Loader
       end
     end
   end
-  
+
   # {"rango/exts" => fullpath}
   def filemap
     @filemap ||= begin
@@ -70,71 +70,71 @@ class << $:
   def push(*args)
     super.tap { self.hook }
   end
-  
+
   def unshift
     super.tap { self.hook }
   end
-  
+
   def shift
     super.tap { self.hook }
   end
-  
+
   def pop
     super.tap { self.hook }
   end
-  
+
   def insert(*args)
     super.tap { self.hook }
   end
-  
+
   def reverse!
     super.tap { self.hook }
   end
-  
+
   def replace
     super.tap { self.hook }
   end
-  
+
   def sort!
     super.tap { self.hook }
   end
-  
+
   def collect!
     super.tap { self.hook }
   end
-  
+
   def map!
     super.tap { self.hook }
   end
-  
+
   def delete(*args)
     super.tap { self.hook }
   end
-  
+
   def delete_at(*args)
     super.tap { self.hook }
   end
-  
+
   def delete_if
     super.tap { self.hook }
   end
-  
+
   def uniq!
     super.tap { self.hook }
   end
-  
+
   def compact!
     super.tap { self.hook }
   end
-  
+
   def flatten!
     super.tap { self.hook }
   end
-  
+
   def shuffle!
     super.tap { self.hook }
   end
-  
+
   protected
   def hook
     $LOADER ||= Loader.new
