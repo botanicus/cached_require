@@ -1,6 +1,6 @@
 h1. About
 
-Experiment with caching loadable files in a hash, so @Kernel#require@ works much faster. It should also works with RubyGems. Inspirated by http://gist.github.com/234467
+Experiment with caching loadable files in a hash, so @Kernel#require@ works much faster. It should also works with RubyGems. Inspired by http://gist.github.com/234467
 
 h1. Usage
 
